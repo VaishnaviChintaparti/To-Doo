@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+        integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="output.css">
+</head>
+
+<body>
+    <div class="p-0 m-0 font-sans">
+        <div class="w-full min-h-screen bg-gradient-to-r from-indigo-300 via-purple-400 to-pink-400">
+            <div class="middle_container w-full max-w-lg bg-amber-100 mx-auto p-10 rounded-lg ">
+                <div class="title_icon flex items-center mb-4">
+                    <h2 class="font-sans font-medium">DO DOO</h2>
+                    <img class="w-5 ml-1.5" src="/images/icon.png" alt="Icon">
+                </div>
+                <div class=" input_box flex items-center justify-between bg-stone-200 pl-4 rounded-3xl">
+                    <input id="inputbox" class=" bg-transparent outline-none p-2" type="text" placeholder="Add your text">
+                    <button
+                        onclick="addTask()" class=" color bg-red-600 border-none cursor-pointer outline-none px-4 py-2 rounded-3xl hover:bg-stone-400 ">Add</button>
+                </div>
+                <style>
+                    .cross{
+                        position: absolute;
+                        height: 40px;
+                        width: 40px;
+                        color: #555;
+                        font-size: 22px;
+                        right: 0;
+                        border-radius: 50%;
+                        
+                        line-height: 40px;
+                        text-align: center;
+                        
+                    }
+                    .cross:hover{
+                        background: #edeef0;
+                    }
+                    li{
+                        
+                        position: relative;
+                        padding-left: 20px;
+                        margin: 8px;
+                        /* margin for list items */
+                        list-style-type: none;
+                    }
+
+                    li::before {
+                        content: '  ';
+                        position: absolute;
+                        height: 18px;
+                        width: 18px;
+                        border-radius: 50%;
+
+                        border: 1px solid red;
+
+                        background-image: url(/images/unchecked.png);
+                        background-size: cover;
+                        background-position: left;
+                        transform: translateX(-50%);
+                        left: 0;
+                        /* left: 0;  left edge of the pseudo-element aligns with the left edge of its containing block, which is the list item. */
+                
+                        margin: 4px;
+                        padding: 5px;
+                        display: inline-block;
+
+
+
+                    }
+                    .custom-checked::before{
+                        
+                        background-image: url(/images/checked.png);
+                    }
+                    .custom-checked{
+                        text-decoration: line-through;
+                    }
+                </style>
+                <ul id="list-container" class="p-2 cursor-pointer ">
+                    <!-- <li class="custom-unchecked custom-checked">Task 1</li>
+                    <li class="custom-unchecked">Task 2</li>
+                    <li class="custom-unchecked">Task 3</li>
+                    <li class="custom-unchecked">Task 4</li>
+                    <li class="custom-unchecked">Task 5</li> -->
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script src="index.js"></script>
+</body>
+
+</html>
